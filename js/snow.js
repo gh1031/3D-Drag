@@ -1,3 +1,7 @@
+/**
+ * @name snow
+ * @desc snow object 
+ */
 var RENDERER = {
   SNOW_COUNT: {
     INIT: 100,
