@@ -42,7 +42,6 @@ $(function () {
         // 将两次鼠标之间的距离以0.1倍赋值给wrap盒子水平和垂直的角度
         rotY += xl * 0.1;
         rotX -= yl * 0.1;
-        console.log(rotX)
         $('.wrap').css({
           transform: 'perspective(800px) translateX(-50%) translateY(-50%) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)'
         })
@@ -51,8 +50,8 @@ $(function () {
         prevY = e.clientY;
       })
     }).on(eventend, function () {
-      $(this).off('mousemove');
-        var play = setInterval(function() {
+      $(this).off(eventmove);
+        play = setInterval(function() {
           xl = xl * 0.95;
           yl = yl * 0.95;
           if (Math.abs(xl) < 0.5 && Math.abs(yl) < 0.5) {
@@ -63,7 +62,7 @@ $(function () {
           $('.wrap').css({
             transform: 'perspective(800px) translateX(-50%) translateY(-50%) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)'
           })
-      }, 200)
+      }, 30)
     })
   })
 })

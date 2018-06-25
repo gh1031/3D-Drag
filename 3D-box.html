@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3D-box</title>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <style>
+    :root {
+      --red: #f00;
+      --hotpink: hotpink;
+    }
+
+    .wrap {
+      margin: 0 auto;
+      margin-top: 200px;
+    }
+
+    #stage {
+      /* perspective: 800px; */
+      /* position: relative;
+      top: 0;
+      left: 0; */
+      margin: 0 auto;
+      transform: perspective(800px) translateX(-50%);
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      width: 250px;
+      height: 250px;
+      animation: autoplay 5s linear infinite;
+    }
+
+    #stage .wall {
+      width: 200px;
+      height: 200px;
+      border: 1px solid var(--red);
+      box-shadow: 0 0 10px var(--hotpink);
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-align: center;
+      line-height: 200px;
+      font-size: 40px;
+      transform-origin: center center;
+    }
+
+    .left {
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    .right {
+      transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .top {
+      transform: rotateX(90deg) translateZ(100px)
+    }
+
+    .bottom {
+      transform: rotateX(-90deg) translateZ(100px)
+    }
+
+    .front {
+      transform: translateZ(100px);
+    }
+
+    .back {
+      transform: translateZ(-100px)
+    }
+
+    @keyframes autoplay {
+      from {
+        transform: rotate3d(1, 1, 1, 0)
+      }
+      to {
+        transform: rotate3d(1, 1, 1, 360deg)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div id="stage">
+      <div class="wall left">1</div>
+      <div class="wall right">2</div>
+      <div class="wall top">3</div>
+      <div class="wall bottom">4</div>
+      <div class="wall front">5</div>
+      <div class="wall back">6</div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+      $('.wall').each(function (index) {
+        var r = parseInt(Math.random() * 256);
+        var g = parseInt(Math.random() * 256);
+        var b = parseInt(Math.random() * 256);
+        $(this).css({
+          background: 'rgba(' + r + ',' + g + ',' + b + ',' + '0.6)'
+        })
+      })
+    })
+  </script>
+</body>
+
+</html>
