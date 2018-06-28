@@ -34,6 +34,10 @@ html,body {
   -webkit-box-reflect: below 8px -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
 }
 
+.container {
+  z-index: 80;
+}
+
 /* mask style */
 
 .mask {
@@ -63,7 +67,8 @@ html,body {
   text-shadow: 0 0 10px #000000;
 }
 .big-img img {
-  width: 70%;
+  border-radius: 5%;
+  width: 85%;
   height: auto;
 }
 
@@ -72,7 +77,7 @@ html,body {
   font-family: STKaiti;
   top: 40px;
   left: 40px;
-  z-index: 100;
+  z-index: 90;
   font-size: 30px;
   font-weight: bold;
   line-height: 38px;
