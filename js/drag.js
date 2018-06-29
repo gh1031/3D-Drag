@@ -94,4 +94,21 @@ $(function () {
       })
     }, 30)
   })
+  var audio = document.querySelector('audio')
+  function playAudio () {
+    audio.play()
+  }
+  function pauseAudio() {
+    audio.pause()
+  }
+  playAudio()
+  $('#pause').on('click', function(e) {
+    e.stopPropagation();
+    pauseAudio()
+  })
+  $('#play').on('click', function(e) {
+    e.stopPropagation()
+    playAudio();
+  })
+  
 })

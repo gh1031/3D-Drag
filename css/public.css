@@ -11,6 +11,7 @@ html,body {
   height: 100%;
   margin: 0;
   padding: 0;
+  transform: translateZ(-1500px)
 }
 
 .wrap {
@@ -34,9 +35,6 @@ html,body {
   -webkit-box-reflect: below 8px -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
 }
 
-.container {
-  z-index: 80;
-}
 
 /* mask style */
 
@@ -55,7 +53,6 @@ html,body {
   margin: auto;
   position: relative;
   text-align: center;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 .big-img span {
@@ -72,6 +69,7 @@ html,body {
   border-radius: 5%;
   width: 85%;
   height: auto;
+  box-shadow: 0 0 20px rgba(255, 5, 191, 0.8);
 }
 
 .tip {
@@ -85,4 +83,24 @@ html,body {
   line-height: 38px;
   color: #fff;
   text-shadow: 8px 8px 8px #d64fd8;
+}
+
+.music {
+  position: fixed;
+  right: 40px;
+  top: 40px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 30px;
+  font-family: STKaiti;
+  text-shadow: 8px 8px 8px #d64fd8;
+}
+.music button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: STKaiti;
+  font-size: 20px;
+  box-shadow: 0 0 8px #d64fd8;
 }
