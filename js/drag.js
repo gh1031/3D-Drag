@@ -72,7 +72,7 @@ $(function () {
       rotY += distX * 0.2;
       rotX -= distY * 0.1;
       $('.wrap').css({
-        transform: 'perspective(800px) translateX(-50%) translateY(-50%) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)'
+        transform: 'perspective(1000px) translateX(-50%) translateY(-50%) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)'
       })
       // 将当前的坐标付给上一个坐标
       prevX = ev.clientX;
@@ -90,7 +90,7 @@ $(function () {
       rotY += distX * 0.2;
       rotX -= distY * 0.1;
       $('.wrap').css({
-        transform: 'perspective(800px) translateX(-50%) translateY(-50%) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)'
+        transform: 'perspective(1000px) translateX(-50%) translateY(-50%) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)'
       })
     }, 30)
   })
