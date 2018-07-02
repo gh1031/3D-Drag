@@ -1,0 +1,15 @@
+{
+  "name": "3D-Drag",
+  "version": "0.0.1",
+  "description": "3d-grllery",
+  "main": "index.js",
+  "repository": "git@github.com:gh1031/3D-Drag.git",
+  "author": "gh1031",
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^1.2.0"
+  },
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  }
+}
