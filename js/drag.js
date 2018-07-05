@@ -3,7 +3,6 @@
  * @desc make img dragable
  */
 
-
 $(function () {
   var imgL = $('.wrap img').length;
   var deg = 360 / imgL;
@@ -29,15 +28,42 @@ $(function () {
     10: '圆嘟嘟的小仙女',
     11: '诱人的小仙女',
   }
+
+  /**
+   * @description 设置所有图片向Z轴移动350px
+   */
   $('.wrap img').each(function (index) {
     $(this).css({
       'transform': 'rotateY(' + index * deg + 'deg) translateZ(' + 350 + 'px)'
-    }).attr('ondragstart', 'return false').on('click', function() {
+    }).attr('ondragstart', 'return false').on('click', function () {
+      // 显示模态框
       $('.mask').css('display', 'flex');
-      $('.mask img').attr('src', './img/img'+index+'.JPG');
+      $('.mask img').attr('src', './img/img' + index + '.JPG');
+
+      /**
+       * @description 点击按钮切换图片
+       */
+      function switchPic(direction) {
+        if (direction === 'prev') {
+          index++;
+          if (index >= imgL - 1) index = 0;
+        } else {
+          index--;
+          if (index < 0) index = imgL - 1;
+        }
+        $('.mask img').attr('src', './img/img' + index + '.JPG');
+      }
+      $('.mask .prev').on('click', function () {
+        switchPic('prev');
+      })
+      $('.mask .next').on('click', function () {
+        switchPic('next');
+      })
+
       $('.mask span').html(text[index + ''])
-      $('.mask .big-img').on('click', function() {
-        console.log($('.mask').css('display'));
+
+      // 隐藏模态框
+      $('.mask .big-img').on('click', function () {
         if ($('.mask').css('display') === 'flex') {
           $('.mask').css('display', 'none');
         }
@@ -52,7 +78,10 @@ $(function () {
     eventend = 'touchend';
     isMobile = true;
   }
-  // 拖拽事件
+
+  /**
+   * @description 拖拽动作
+   */
   $(document).on(eventstart, function (e) {
     clearInterval(play);
     // 处理移动端兼容
@@ -84,9 +113,8 @@ $(function () {
       distX = distX * 0.95;
       distY = distY * 0.95;
       if (Math.abs(distX) <= 0.5 && Math.abs(distY) <= 0.5) {
-        clearInterval( play );
+        clearInterval(play);
       }
-      console.log(distX, distY);
       rotY += distX * 0.2;
       rotX -= distY * 0.1;
       $('.wrap').css({
@@ -94,21 +122,27 @@ $(function () {
       })
     }, 30)
   })
+
+  /**
+   * @description 控制音乐播放与暂停
+   */
   var audio = document.querySelector('audio')
-  function playAudio () {
+
+  function playAudio() {
     audio.play()
   }
+
   function pauseAudio() {
     audio.pause()
   }
   playAudio()
-  $('#pause').on('click', function(e) {
+  $('#pause').on('click', function (e) {
     e.stopPropagation();
     pauseAudio()
   })
-  $('#play').on('click', function(e) {
+  $('#play').on('click', function (e) {
     e.stopPropagation()
     playAudio();
   })
-  
+
 })
