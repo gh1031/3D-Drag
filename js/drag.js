@@ -15,18 +15,11 @@ $(function () {
   var distX = distY = 0;
   var play = null;
   var text = {
-    0: '羞哒哒的小仙女',
-    1: '赛天仙的小仙女',
-    2: '敲可爱的小仙女',
-    3: '18岁的小仙女',
-    4: '睡觉觉的小仙女',
-    5: '有气质的小仙女',
-    6: '委屈巴巴的小仙女',
-    7: '萌哒哒的小仙女',
-    8: '超短发的小仙女',
-    9: '苗条的小仙女',
-    10: '圆嘟嘟的小仙女',
-    11: '诱人的小仙女',
+    0: Math.random().toString(2),
+    1: Math.random().toString(2),
+    2: Math.random().toString(2),
+    3: Math.random().toString(2),
+    4: Math.random().toString(2),
   }
 
   /**
